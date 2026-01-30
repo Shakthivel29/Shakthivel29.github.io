@@ -13,6 +13,17 @@ function setActiveTab(path) {
   });
 }
 
+function revealOnScroll() {
+  document.querySelectorAll(".reveal").forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
 function render(path) {
   setActiveTab(path);
 
@@ -23,13 +34,15 @@ function render(path) {
   else if (path === "/resume") resume();
   else if (path === "/contact") contact();
   else home();
+
+  setTimeout(revealOnScroll, 100);
 }
 
 /* HOME */
 function home() {
   app.innerHTML = `
-    <section class="hero">
-      <img src="assets/profile.jpg" alt="Profile Photo" />
+    <section class="hero reveal">
+      <img src="assets/profile.jpg" />
       <div>
         <h1>Shakthivel K</h1>
         <h3>B.E Computer Science Engineering (2025)</h3>
@@ -43,12 +56,12 @@ function home() {
 /* ABOUT */
 function about() {
   app.innerHTML = `
-    <h2>About Me</h2>
-    <div class="card">
+    <h2 class="reveal">About Me</h2>
+    <div class="card reveal">
       <p>
-        I am a Computer Science graduate with strong foundations in software
-        development, cloud computing, artificial intelligence, and data analytics.
-        I enjoy building scalable, real-world solutions and continuously upskilling.
+        Computer Science graduate with strong foundations in software development,
+        cloud computing, AI, and data analytics. Passionate about building scalable
+        real-world solutions and continuous learning.
       </p>
       <div>
         <span class="tag">Python</span>
@@ -65,16 +78,16 @@ function about() {
 /* PROJECTS */
 function projects() {
   app.innerHTML = `
-    <h2>Projects</h2>
+    <h2 class="reveal">Projects</h2>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>Personal Health Guardian</h3>
-      <p>AI system to analyze medical PDFs and generate insights.</p>
+      <p>AI system to extract medical data from PDFs and generate insights.</p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>CKD Early Diagnosis System</h3>
-      <p>ML-based prediction system with explainable AI.</p>
+      <p>Machine learning model with explainable AI.</p>
     </div>
   `;
 }
@@ -82,16 +95,16 @@ function projects() {
 /* CERTIFICATES */
 function certificates() {
   app.innerHTML = `
-    <h2>Certificates</h2>
+    <h2 class="reveal">Certificates</h2>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>Deloitte Australia – Data Analytics</h3>
-      <p>Tableau dashboards & Excel analysis.</p>
+      <p>Tableau dashboards and Excel analysis.</p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>Deloitte Australia – Cyber</h3>
-      <p>Log analysis & breach investigation.</p>
+      <p>Log analysis and breach investigation.</p>
     </div>
   `;
 }
@@ -99,8 +112,8 @@ function certificates() {
 /* RESUME */
 function resume() {
   app.innerHTML = `
-    <h2>Resume</h2>
-    <div class="card">
+    <h2 class="reveal">Resume</h2>
+    <div class="card reveal">
       <a class="button" href="assets/resume.pdf" target="_blank">Download Resume</a>
     </div>
   `;
@@ -109,8 +122,8 @@ function resume() {
 /* CONTACT */
 function contact() {
   app.innerHTML = `
-    <h2>Contact</h2>
-    <div class="card">
+    <h2 class="reveal">Contact</h2>
+    <div class="card reveal">
       <p>Email: shakthivel2k4@gmail.com</p>
       <p>Phone: +91 73058 28508</p>
     </div>
