@@ -4,14 +4,16 @@
   <meta charset="UTF-8" />
   <title>Shakthivel | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#020617" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo" onclick="navigate('/')">Shakthivel</div>
-
     <ul id="nav">
       <li data-path="/" onclick="navigate('/')">Home</li>
       <li data-path="/about" onclick="navigate('/about')">About</li>
@@ -22,8 +24,14 @@
     </ul>
   </nav>
 
+  <!-- CONTENT -->
   <main id="app" class="page"></main>
 
   <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </body>
 </html>
