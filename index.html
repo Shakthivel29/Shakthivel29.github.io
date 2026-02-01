@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Shakthivel | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo" onclick="navigate('/')">Shakthivel</div>
   <ul>
     <li onclick="navigate('/')">Home</li>
+    <li onclick="navigate('/about')">About</li>
     <li onclick="navigate('/projects')">Projects</li>
     <li onclick="navigate('/certificates')">Certificates</li>
     <li onclick="navigate('/resume')">Resume</li>
@@ -22,6 +24,14 @@
   </ul>
 </nav>
 
+<!-- FLOATING ICONS -->
+<div class="floating-icons">
+  <a href="mailto:shakthivel2k4@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+  <a href="https://wa.me/917305828508" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://github.com/Shakthivel29" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+</div>
+
+<!-- APP ROOT -->
 <main id="app" class="page"></main>
 
 <script src="app.js"></script>
