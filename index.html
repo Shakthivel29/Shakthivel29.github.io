@@ -1,86 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Shakthivel | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar">
-  <div class="logo">Shakthivel</div>
+  <div class="logo" onclick="navigate('/')">Shakthivel</div>
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li onclick="navigate('/')">Home</li>
+    <li onclick="navigate('/projects')">Projects</li>
+    <li onclick="navigate('/certificates')">Certificates</li>
+    <li onclick="navigate('/resume')">Resume</li>
+    <li onclick="navigate('/contact')">Contact</li>
   </ul>
 </nav>
 
-<section id="home" class="section hero">
-  <img src="assets/profile.jpg">
-  <h1>Shakthivel K</h1>
-  <p>Computer Science Engineer | Data • Cloud • Cyber</p>
-  <a href="#projects" class="btn">View Projects</a>
-</section>
-
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    B.E Computer Science Engineering graduate (2025) with strong interest
-    in Data Analytics, Cloud Computing, Cyber Security, and Automation.
-  </p>
-</section>
-
-<section id="projects" class="section">
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>Personal Health Guardian</h3>
-    <p>AI-driven health insights from medical PDF reports.</p>
-  </div>
-
-  <div class="card">
-    <h3>CKD Early Diagnosis System</h3>
-    <p>Machine learning-based chronic kidney disease prediction.</p>
-  </div>
-</section>
-
-<section id="certificates" class="section">
-  <h2>Certificates</h2>
-
-  <div class="cert-group">
-    <h3>Deloitte</h3>
-    <div class="card"><a href="assets/certificates/deloitte/data-analytics.pdf" target="_blank">Data Analytics Job Simulation</a></div>
-    <div class="card"><a href="assets/certificates/deloitte/cyber.pdf" target="_blank">Cyber Job Simulation</a></div>
-    <div class="card"><a href="assets/certificates/deloitte/technology.pdf" target="_blank">Technology Job Simulation</a></div>
-  </div>
-
-  <div class="cert-group">
-    <h3>McKinsey & Company</h3>
-    <div class="card"><a href="assets/certificates/mckinsey/forward-program.pdf" target="_blank">McKinsey Forward Program</a></div>
-  </div>
-
-  <div class="cert-group">
-    <h3>NASSCOM</h3>
-    <div class="card"><a href="assets/certificates/nasscom/data-science.pdf" target="_blank">Data Science for Beginners</a></div>
-    <div class="card"><a href="assets/certificates/nasscom/rpa-foundation.pdf" target="_blank">RPA Developer Foundation</a></div>
-    <div class="card"><a href="assets/certificates/nasscom/cdac-fundamentals.pdf" target="_blank">CDAC Fundamentals</a></div>
-  </div>
-
-  <div class="cert-group">
-    <h3>IIT Madras</h3>
-    <div class="card"><a href="assets/certificates/iit/acm-rocs-workshop.pdf" target="_blank">ACM Workshop on ROCS</a></div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: shakthivel2k4@gmail.com</p>
-  <p><a href="assets/resume.pdf" target="_blank" class="btn">Download Resume</a></p>
-</section>
+<main id="app" class="page"></main>
 
 <script src="app.js"></script>
 </body>
