@@ -9,6 +9,7 @@ window.onpopstate = () => render(location.pathname);
 
 function render(path) {
   if (path === "/") home();
+  else if (path === "/about") about();
   else if (path === "/projects") projects();
   else if (path === "/certificates") certificates();
   else if (path === "/resume") resume();
@@ -16,35 +17,60 @@ function render(path) {
   else home();
 }
 
-/* SCREENS */
-
+/* HOME */
 function home() {
   app.innerHTML = `
     <section class="hero">
       <img src="assets/profile.jpg">
       <h1>Shakthivel K</h1>
-      <p>Software • Cloud • Data • Cyber</p>
-      <button class="hero-btn" onclick="navigate('/projects')">View My Work</button>
+      <p>Computer Science Engineer | Software • Cloud • Data • Cyber</p>
+      <button class="hero-btn" onclick="navigate('/about')">Explore My Profile</button>
     </section>
   `;
 }
 
-function projects() {
+/* ABOUT (LONG INTRO) */
+function about() {
   app.innerHTML = `
-    <h2>Projects</h2>
-
-    <div class="card hover-card">
-      <h3>Personal Health Guardian</h3>
-      <p>AI-driven health insights from medical PDF reports.</p>
-    </div>
-
-    <div class="card hover-card">
-      <h3>CKD Early Diagnosis System</h3>
-      <p>Machine learning based disease prediction system.</p>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a B.E. Computer Science Engineering graduate (2025) with strong foundations
+        in software development, object-oriented programming, cloud computing,
+        data analytics, and cybersecurity.
+      </p>
+      <p>
+        I have gained practical exposure through internships, Deloitte job simulations,
+        NASSCOM certification programs, IIT Madras workshops, and AWS cloud training.
+        These experiences helped me understand real-world enterprise workflows,
+        SDLC practices, system-level thinking, and secure application development.
+      </p>
+      <p>
+        I enjoy building structured, scalable solutions and continuously upgrading
+        my skills to stay aligned with modern industry standards. I am actively
+        seeking opportunities where I can contribute as a system or software engineer
+        while growing in a collaborative environment.
+      </p>
     </div>
   `;
 }
 
+/* PROJECTS */
+function projects() {
+  app.innerHTML = `
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Personal Health Guardian</h3>
+      <p>AI-based health insights system using Python, NLP, and ML.</p>
+    </div>
+    <div class="card">
+      <h3>CKD Early Diagnosis System</h3>
+      <p>Machine learning-based disease prediction application.</p>
+    </div>
+  `;
+}
+
+/* CERTIFICATES */
 function certificates() {
   app.innerHTML = `
     <h2>Certificates</h2>
@@ -60,41 +86,34 @@ function certificates() {
     <h3>NASSCOM</h3>
     <a class="cert-card" href="assets/certificates/nasscom/data-science.pdf" target="_blank">Data Science</a>
     <a class="cert-card" href="assets/certificates/nasscom/rpa-foundation.pdf" target="_blank">RPA Foundation</a>
+
+    <h3>IIT Madras</h3>
+    <a class="cert-card" href="assets/certificates/iit/acm-rocs-workshop.pdf" target="_blank">ACM Workshop on ROCS</a>
+
+    <h3>Amazon Web Services (AWS)</h3>
+    <a class="cert-card" href="assets/certificates/aws/aws-foundations.pdf" target="_blank">AWS Cloud Foundations</a>
   `;
 }
 
+/* RESUME */
 function resume() {
   app.innerHTML = `
     <h2>Resume</h2>
     <div class="card">
-      <iframe src="assets/resume.pdf" width="100%" height="600px"></iframe>
+      <iframe src="assets/resume.pdf" width="100%" height="650px"></iframe>
     </div>
   `;
 }
 
+/* CONTACT */
 function contact() {
   app.innerHTML = `
     <h2>Contact</h2>
-
     <div class="card">
-      <div class="contact-item">
-        <i class="fas fa-phone"></i> <span>+91 73058 28508</span>
-      </div>
-
-      <div class="contact-item">
-        <i class="fab fa-whatsapp"></i>
-        <a href="https://wa.me/917305828508" target="_blank">WhatsApp</a>
-      </div>
-
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:shakthivel2k4@gmail.com">shakthivel2k4@gmail.com</a>
-      </div>
-
-      <div class="contact-item">
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/Shakthivel29" target="_blank">GitHub</a>
-      </div>
+      <p>📧 <a href="mailto:shakthivel2k4@gmail.com">shakthivel2k4@gmail.com</a></p>
+      <p>📞 +91 73058 28508</p>
+      <p>💬 <a href="https://wa.me/917305828508" target="_blank">WhatsApp</a></p>
+      <p>🔗 <a href="https://github.com/Shakthivel29" target="_blank">GitHub</a></p>
     </div>
   `;
 }
